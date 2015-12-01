@@ -1,0 +1,15 @@
+<template name="SimpleIssueTrackerIssuesIndex">
+    <ul class="list-group">
+        {{#each issues}}
+            <li class="list-group-item">
+                <span class="badge">{{state}}</span>
+                <h4><small>#{{number}}</small> <a href="{{pathFor 'simple.issue.tracker.issues.detail'}}">{{title}}</a></h4>
+                <div>
+                    {{#each labels}}
+                        {{> SimpleIssueTracker_IssuesLabel this}}
+                    {{/each}}
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</template>

@@ -1,0 +1,39 @@
+<template name="SimpleIssueTrackerIssuesDetail">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a href="{{pathFor 'simple.issue.tracker.issues.index'}}" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back to Issues</a>
+            
+            <h3>{{title}} <span class="simple-issue-number">#{{number}}</span></h3>
+            <div>
+                <span class="simple-issue-state {{state}}"><i class="{{stateIcon}}"></i> {{state}}</span>
+                <span>
+                    <strong>{{user.login}}</strong> opened this issue {{formatDate created_at "relative"}}
+                    • {{pluralize commentCount "comment"}}
+                </span>
+            </div>
+            <div class="simple-issue-labels">
+                {{#each labels}}
+                    {{> SimpleIssueTracker_IssuesLabel this}}
+                {{/each}}
+            </div>
+            
+            <hr>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>{{user.login}}</strong> commented {{formatDate created_at "relative"}}
+                </div>
+                <div class="panel-body">{{#markdown}}{{body}}{{/markdown}}</div>
+            </div>
+
+            {{#each comments}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{user.login}}</strong> commented {{formatDate created_at "relative"}}
+                    </div>
+                    <div class="panel-body">{{#markdown}}{{body}}{{/markdown}}</div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</template>

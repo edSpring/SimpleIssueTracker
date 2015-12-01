@@ -1,0 +1,21 @@
+<template name="SimpleIssueTrackerLayout">
+    <div class="container">
+        <div class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{pathFor 'simple.issue.tracker.issues.index'}}">SimpleIssueTracker</a>
+                </div>
+            </div>
+        </div>
+        {{> yield }}
+    </div>
+</template>
+
+<template name="SimpleIssueTracker_Loading">
+    <div class="loading-spinWrapper">
+        <div class="loading-spinDots">
+            <div class="loading-dot loading-dot1 green"></div>
+            <div class="loading-dot loading-dot2 green"></div>
+        </div>
+    </div>
+</template>
