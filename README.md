@@ -17,7 +17,7 @@
 
 
 #### Challenge 1
-Refactor the `getOpenIssues` to `getIssues` which would accept a set of optional parameters for filtering the request.
+Refactor `getOpenIssues()` to `getIssues()` which would accept a set of optional parameters for filtering the request.
 Resource:
 - http://mikedeboer.github.io/node-github/#issues.prototype.repoIssues
 
